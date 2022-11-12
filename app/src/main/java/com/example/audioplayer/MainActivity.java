@@ -10,6 +10,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -41,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         permission();
+        AppCenter.start(getApplication(), "{\"a377270c-f1dd-4c75-aded-df5b9d8682e1\"}",
+                Analytics.class, Crashes.class);
 
     }
 
